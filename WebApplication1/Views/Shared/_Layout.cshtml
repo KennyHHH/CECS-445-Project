@@ -6,33 +6,116 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            window.onscroll = function() {
+                if (window.pageYOffset >= 50){
+                    $('nav').css({ transition: 'height 1s', height: '50px' });
+                }
+                else {
+                    $('nav').css({ transition: 'height 1s', height: '80px' });
+                }
+            }
+        });
+    </script>
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-            </div>
+    <nav class="navbar navbar-dark navbar-expand-md fixed-top bg-blue">
+        @Html.ActionLink("Long Beach Animal Shelter", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse bg-blue p-1" style="border-radius: 10px;" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                <li class="nav-item">@Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                <li class="nav-item">@Html.ActionLink("Adopt", "", "", new { area = "" }, new { @class = "nav-link" })</li>
+                <li class="nav-item">@Html.ActionLink("Lost animal", "", "", new { area = "" }, new { @class = "nav-link" })</li>
+                <li class="nav-item">@Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+            </ul>
+            <form class="form-inline mt-2 mt-md-0">
+                <button class="btn my-2 my-sm-0 text-black nav-item bg-white" type="submit">@Html.ActionLink("Sign In", "LogIn", "Account")</button>
+            </form>
         </div>
-    </div>
+    </nav>
     <div class="container body-content">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
+    </div>
+    <footer class="text-white p-5">
+        <div class="container-fluid ">
+            <div class="row">
+                <div class="col-md-2">
+                    <h5 class="title">Site Map</h5>
+                    <ul>
+                        <li><span class="font-weight-bold">@Html.ActionLink("Home", "Index", "Home", new { area = "" })</span></li>
+                        <li>
+                            <span class="font-weight-bold">About</span>
+                            <ul class="px-2">
+                                <li>@Html.ActionLink("About us", "About", "Home", new { area = "" })</li>
+                                <li>@Html.ActionLink("Contact", "Contact", "Home", new { area = "" })</li>
+                                <li><a href="#!">Find us</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <br />
+                    <ul>
+                        <li>
+                            <span class="font-weight-bold">Adopt</span>
+                            <ul class="px-2">
+                                <li><a href="#!">Animal Catalog</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="font-weight-bold">Lost Animals</span>
+                            <ul class="px-2">
+                                <li><a href="#!">Map</a></li>
+                                <li>
+                                    Inform
+                                    <ul class="px-2">
+                                        <li><a href="#!">Found</a></li>
+                                        <li><a href="#!">Lost</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <br />
+                    <ul>
+                        <li class="font-weight-bold">@Html.ActionLink("Sign In", "LogIn", "Account")</li>
+                        <li class="font-weight-bold"><a href="#!">Sign On</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="title">Long Beach Animal Shelter</h5>
+                    <div class="p-2">
+                        <p>Follow us!</p>
+                        <a href="https://www.facebook.com"><img src="~/Media/Social/facebook.png" alt="facebook" class="icon-small" /></a>
+                        <a href="https://www.instagram.com"><img src="~/Media/Social/instagram.png" alt="instagram" class="icon-small" /></a>
+                        <a href="https://www.youtube.com"><img src="~/Media/Social/youtube.png" alt="youtube" class="icon-small" /></a>
+                        <a href="https://www.twitter.com"><img src="~/Media/Social/twitter.png" alt="twitter" class="icon-small" /></a>
+                        <a href="https://www.snapchat.com"><img src="~/Media/Social/snapchat.png" alt="snapchat" class="icon-small" /></a>
+                    </div>
+                    <div class="p-2">
+                        <a href="tel:855-123-4567">Phone Number: (855) 123-4567</a>
+                    </div>
+                    <div class="p-2">
+                        <a href="mailto:longbeachanimalshelter@animalshelter.com">Email: longbeachanimalshelter@animalshelter.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="footer-copyright">
+        <div class="container-fluid">
+            <p>&copy; @DateTime.Now.Year - Long Beach Animal Shelter</p>
+        </div>
     </div>
 
     @Scripts.Render("~/bundles/jquery")

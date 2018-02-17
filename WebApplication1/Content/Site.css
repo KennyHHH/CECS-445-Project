@@ -1,12 +1,15 @@
 ﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+    padding-top: 90px;
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+}
+
+nav {
+    height: 80px;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -21,4 +24,36 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+.bg-blue {
+    background-color: #3524A6;
+}
+
+footer {
+    background-color: #113A4C !important;
+}
+
+footer a {
+    color: #FFF;
+}
+
+footer a:hover {
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+}
+
+.icon-small {
+    height: 40px;
+    width: auto;
+	top: 50%;
+	left: 50%;
+}
+
+.body-content {
+    min-height: 300px;
+}
+
+footer li {
+    list-style-type: none;
 }
