@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="utf-8">
+   <title>Long Beach Animal Shelter</title>
+   <link rel=stylesheet href="HomePage.css" type="text/css">
+</head>
+
+
+<style>
+
+html {
+    background-color: #e8eaf6;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    max-width: 95%;
+    margin: auto;
+}
+
+
+.column {
+    float: left;
+    width: 45%;
+    padding: 2%;
+}
+
+.column62 {
+
+    float: left;
+    width: 60%;
+    padding: 2%;
+}
+
+.column33 {
+
+    float: left;
+    width: 32%;
+    padding: 2%;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+
+}
+
+.container {
+    border-radius: 3%;
+    background-color: #f2f2f2;
+    padding: 3%;
+}
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 0.5%;
+    box-sizing: border-box;
+    margin-top: 1%;
+    margin-bottom: 3%;
+    resize: vertical;
+}
+
+
+.border {
+    /* borders to separate page content */
+    border: 1px solid #c5cae9;
+    padding-bottom: 1%;
+}
+
+
+/* font sizes */
+h1 {
+    font-size: 350%;
+}
+
+h2 {
+    font-size: 200%;
+    background-color: #505b99;
+    color: #ffffff;
+    padding: 1%;
+}
+
+h3 {
+    font-size: 150%;
+    background-color: #505b99;
+    color: #ffffff;
+    padding: 1%;
+}
+
+h4 {
+    font-size: 110%;
+    background-color: #505b99;
+    color: #ffffff;
+    padding: 0.5%;
+}
+
+/* head stylings */
+#title {
+    color: #ffffff;
+    background-color: #1a237e;
+    padding: 1% 5%;
+}
+
+#title p {
+    font-style: italic;
+}
+
+nav {
+    background-color: #3f51b5;
+}
+
+nav li {
+    display: inline;
+    padding-right: 2%;
+}
+
+nav a ,footer a{
+    color: #ffffff;
+    font-size: 120%;
+}
+
+nav a:hover {
+    background-color: #F50057;
+    padding: 1%;
+    color: #ffffff;
+}
+
+nav ul {
+    padding: .5% 5%;
+}
+
+
+
+figure img {
+    width: 100%;
+}
+
+
+.highlights--container {
+    width: 55%%;
+}
+
+
+.highlights--media{
+    float:left;
+}
+
+.highlights--media img{
+width:300px;height:300px;margin-right:15px;
+}
+
+.highlights--button{
+    float:right;
+}
+
+
+div.gallery {
+    margin: 3px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 180px;
+}
+
+div.gallery:hover {
+    border: 1px solid #777;
+}
+
+div.gallery img {
+    width: 100%;
+    height: auto;
+    float:left;
+}
+
+div.desc {
+    padding: 10px;
+    text-align: center;
+}
+
+
+</style>
+
+<body>
+
+<!--
+<header>
+     <h1>Long Beach Animal Shelter</h1>
+     <p>Adobt, find your lost pets</p>
+  <nav>
+    <ul>
+      <li><a href="#">About</a></li>
+	  <li><a href="#">Adobt</a></li>
+	  <li><a href="#">Lost</a></li>
+	  <li><a href="#">contact us</a></li>
+    </ul>
+  </nav>
+</header>
+-->
+
+
+<main>
+
+<div class="row">
+
+   <section class="column">
+      <h3>Adobt</h3>
+
+      <!-- slideShow
+      <div class="SSFrame">
+	          <span id="SSimg1"></span>
+	          <span id="SSimg2"></span>
+	          <span id="SSimg3"></span>
+	          <span id="SSimg4"></span>
+
+<!-- images for slideShow
+	              <img src="https://topdogtips.com/wp-content/uploads/2017/09/Best-Animal-Shelters-2.jpg" class="slider-image" />
+	              <img src="http://www.thepetmatchmaker.com/wp-content/uploads/2014/07/LACatShelter-4.jpg" class="slider-image" />
+	              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNK0Fi6ZHCQbhMujkaoZRdkzDXzAd1z8raeMYdFNAen9-N_srSPw" class="slider-image" />
+	              <img src="https://www.bwar.org/wp-content/uploads/2015/08/dante-and-luci-small.jpg" class="slider-image" />
+
+	          </div>
+
+	          <div class="SSbuttonFrame">
+	              <a href="#SSimg1" class="slider-change"></a>
+	              <a href="#SSimg2" class="slider-change"></a>
+	              <a href="#SSimg3" class="slider-change"></a>
+	              <a href="#SSimg4" class="slider-change"></a>
+	          </div>
+    </div>
+  -->
+
+
+   </section>
+
+   <section class="column">
+		<h3>Recently Found</h3>
+		<!-- gallary -->
+
+		<div class="gallery">
+		  <a target="_blank" href="img_fjords.jpg">
+		    <img src="http://www.trbimg.com/img-584f3ae0/turbine/ct-ptb-pets-in-shelters-st-1212-20161212" alt="found animal" width="300" height="200">
+		  </a>
+		  <div class="desc">Add a description of the image here</div>
+		</div>
+
+		<div class="gallery">
+		  <a target="_blank" href="img_forest.jpg">
+		    <img src="https://static.youcaring.com/api/uploads/fundraisers/469759/63a751c1-30db-4b1f-a421-f62a7fb8679b_profile.jpg" alt="found" width="600" height="400">
+		  </a>
+		  <div class="desc">Add a description of the image here</div>
+		</div>
+
+		<div class="gallery">
+		  <a target="_blank" href="img_lights.jpg">
+		    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRW80s76eB_10yoKnx9QgRM3oZhuz0WAWnAqPpm5LZmtIFKITwD" alt="found " width="600" height="400">
+		  </a>
+		<div class="desc">Add a description of the image here</div>
+	   </div>
+
+	   <div>
+	   		<a style="padding: 10px;" href="#" class="highlights--button">See more pets</a>
+	   </div>
+
+   </section>
+
+
+<div class="row">
+
+   <section class="column62">
+         <h2>Stories</h3>
+
+         <article>
+				 <div class="highlights--container">
+					 <div class="highlights--media">
+						<img src="https://i.pinimg.com/originals/5d/2d/11/5d2d11f83b251ad0e4c761bc8d20512e.jpg" alt="kid found his dog">
+					 </div>
+					 <div class="highlights--text">
+						 <h4>Kid found his dog</h4>
+						 <p><em>Alexandra with Cucumba, 2/21/2018</em></p>
+						 <p>We finaly found our dog Cucumba at the beach. He was crying because a lobster bit him, the lobster bit him because he was hungry. Alexandra, 9. Wamboin. One day when I got back from school, I suddenly noticed my pet dog Lucky was missing.</p>
+						 <a href="#" class="highlights--button">Read More About This</a>
+				   </div>
+
+         </article>
+
+   </section>
+
+   <section class="column33">
+   		<h3>Sign Up</h3>
+
+   		<div class="container">
+		  <form action="/SignUp.php">
+
+		    <label for="fname">First Name</label>
+		    <input type="text" id="fname" name="firstname" placeholder="Your first name..">
+
+		    <label for="lname">Last Name</label>
+		    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+		    <label for="mail">E-mail</label>
+		    <input type="text" id="mail" name="E-mail" placeholder="Your E-mail..">
+
+		    <label for="phone">Phone Number</label>
+		    <input type="text" id="phone" name="Phone Number" placeholder="Your Phone Number..">
+
+			<label for="State">State</label>
+		    <input type="text" id="State" name="State" placeholder="Your State..">
+
+		   	<label for="ZipCode">Zip Code</label>
+		    <input type="text" id="ZipCode" name="Zip Code" placeholder="Your Zip Code..">
+
+		   <input type="submit" value="Sing Up">
+		   </form>
+		</div>
+   </section>
+
+</div>
+
+</main>
+
+<!--
+<footer>
+  <p><a href="#">Home</a> | <a href="#">Search</a>  |  <a href="#">Contact US</a>  | <a href="#">Adobt</a>
+   | <a href="#">Lost</a></p>
+  <p>Latest Update: Monday, 19-Feb-2018 15:02:54 PST </p>
+  <p>Created By: Team [ <a href="team@gmail.com">team@gmail.com</a> </p>
+</footer>
+-->
+
+</body>
+</html>
