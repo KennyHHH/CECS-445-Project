@@ -33,11 +33,12 @@
                 <li class="nav-item active">@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
                 <li class="nav-item">@Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
                 <li class="nav-item">@Html.ActionLink("Adopt", "", "", new { area = "" }, new { @class = "nav-link" })</li>
-                <li class="nav-item">@Html.ActionLink("Lost animal", "DisappearanceForm", "", new { area = "" }, new { @class = "nav-link" })</li>
+                <li class="nav-item">@Html.ActionLink("Lost animal", "Index", "Pets", new { area = "" }, new { @class = "nav-link" })</li>
                 <li class="nav-item">@Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
             </ul>
             <form class="form-inline mt-2 mt-md-0">
-                <button class="btn my-2 my-sm-0 text-black nav-item bg-white" type="submit">@Html.ActionLink("Sign In", "LogIn", "Account")</button>
+                <input type="button" class="btn my-2 my-sm-0 text-black nav-item bg-white" value="Log in" onclick = "location.href = '@Url.Action("LogIn", "Account")'"/>
+                
             </form>
         </div>
     </nav>

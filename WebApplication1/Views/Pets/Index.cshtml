@@ -1,0 +1,53 @@
+﻿@model IEnumerable<WebApplication1.Models.Pets>
+
+@{
+    ViewBag.Title = "Lost Pets";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Add New Lost Pet", "Create")
+</p>
+<table class="table">
+    <tr>
+        @*
+        <th>
+            @Html.DisplayNameFor(model => model.Breed.Name)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.PetName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PetAge)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PetDescription)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.Breed.Name)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.PetName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PetAge)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PetDescription)
+        </td>
+        @*Below does not yet do anything, i will add them once format is deem acceptable.*@
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.PetID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.PetID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.PetID })
+        </td>
+    </tr>
+}
+
+</table>
