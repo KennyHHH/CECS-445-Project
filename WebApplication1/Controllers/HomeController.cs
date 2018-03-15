@@ -26,5 +26,15 @@ namespace WebApplication1.Controllers
 
             return View();
         }
+
+        public ActionResult Catalogue()
+        {
+            return View();
+        }
+
+        public ActionResult Adopt()
+        {
+            return View();
+        }
     }
 }

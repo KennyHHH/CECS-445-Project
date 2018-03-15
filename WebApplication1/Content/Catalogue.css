@@ -1,0 +1,47 @@
+﻿.jumb{
+  /*padding: 2rem 1rem;*/
+  margin-bottom: 1rem;
+  background-color: #C0C0C0;
+  border-radius: 0.3rem;
+  text-align:center;
+  margin-right:3%;
+}
+
+.image-template{
+    max-width:100%;
+    max-height:55%;
+    margin-bottom: 1rem;
+    border-radius: 0.3rem;
+}
+
+.button-template{
+    margin-bottom: 0.5rem;
+    border-radius: 0.3rem;
+    border:none;
+    transition-duration: 0.7s;
+    background-color:#dcdcdc;
+    color: #1f53dc;
+}
+
+.button-template:hover{
+    cursor:pointer;
+    background-color:#1f53dc;
+    color:white;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.col-4-2 {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 30%;
+  flex: 0 0 30%;
+  max-width: 30%;
+}
+
+.col-4-2{
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
