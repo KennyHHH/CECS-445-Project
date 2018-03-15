@@ -34,7 +34,7 @@
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
                 <li class="nav-item">@Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                <li class="nav-item">@Html.ActionLink("Adopt", "", "", new { area = "" }, new { @class = "nav-link" })</li>
+                <li class="nav-item">@Html.ActionLink("Adopt", "Catalogue", "Home", new { area = "" }, new { @class = "nav-link" })</li>
                 <li class="nav-item">@Html.ActionLink("Lost animal", "Index", "Pets", new { area = "" }, new { @class = "nav-link" })</li>
                 <li class="nav-item">@Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
             </ul>
@@ -70,7 +70,7 @@
                         <li>
                             <span class="font-weight-bold">Adopt</span>
                             <ul class="px-2">
-                                <li><a href="#!">Animal Catalog</a></li>
+                                <li>@Html.ActionLink("Adopt", "Catalogue", "Home", new { area = "" })</li>
                             </ul>
                         </li>
                         <li>
@@ -80,8 +80,8 @@
                                 <li>
                                     Inform
                                     <ul class="px-2">
-                                        <li><a href="#!">Found</a></li>
-                                        <li><a href="#!">Lost</a></li>
+                                        <li>@Html.ActionLink("Found", "FoundAnimal", "Pets")</li>
+                                        <li>@Html.ActionLink("Lost", "Index", "Pets")</li>
                                     </ul>
                                 </li>
                             </ul>

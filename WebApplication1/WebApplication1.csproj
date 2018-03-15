@@ -295,6 +295,8 @@
     <Content Include="Views\Pets\Create.cshtml" />
     <Content Include="Views\Pets\Index.cshtml" />
     <Content Include="Views\Pets\FoundAnimal.cshtml" />
+    <Content Include="Views\Home\Adopt.cshtml" />
+    <Content Include="Views\Home\Catalogue.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

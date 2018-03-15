@@ -1,12 +1,3 @@
-body {
-    /* specify page font and max width */
-    font-family: Arial, Helvetica, sans-serif;
-    margin: auto;
-    padding: 2%;
-    max-width:90%;
-}
-
-
 img{
     width: 30%;
     height: 60%;
@@ -23,20 +14,16 @@ img:hover{
 }
 
 h2{
-    font-size: 2vw;
     border-bottom: .1vw solid;
+    margin: 40px 0px 20px 0px;
     
 }
+
 h2 span{
-    background-color: #4BD7D7;
+    background-color: #14234A;
     border: .1vw solid black;
     color: white;
     padding: .5%;
-}
-
-h2 span:hover{
-    color: palevioletred;
-    cursor: pointer;
 }
 
 /* stories */
@@ -45,22 +32,14 @@ h2 span:hover{
     width: 55%%;
 }
 
-
-.highlights--media{
+.highlights--media {
     float:left;
 }
 
-.highlights--media img{
+.highlights--media img {
 width:300px;height:300px;margin-right:15px;
 }
 
-.highlights--button{
+.highlights--button {
     float:right;
-}
-
-
-
-p {
-    font-style: italic;
-    font-size:100%;
 }

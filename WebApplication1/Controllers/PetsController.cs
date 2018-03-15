@@ -19,6 +19,10 @@ namespace WebApplication1.Controllers
             var pets = db.Pet;
             return View(pets.ToList());
         }
+        public ActionResult FoundAnimal()
+        {
+            return View();
+        }
 
         public ActionResult Details(int? id)
         {
