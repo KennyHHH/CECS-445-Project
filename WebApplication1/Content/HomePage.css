@@ -1,199 +1,43 @@
-html {
-    /* page Bg color */
-    background-color: #e8eaf6;
-}
-
 body {
     /* specify page font and max width */
     font-family: Arial, Helvetica, sans-serif;
-    max-width: 95%;
     margin: auto;
-}
-
-header {
-    /* space to separate  page content */
-    margin-bottom: 3%;
-}
-
-
-.column {
-    float: left;
-    width: 45%;
     padding: 2%;
-}
-
-.column62 {
-    float: left;
-    width: 60%;
-    padding: 2%;
-}
-
-.column33 {
-    float: left;
-    width: 32%;
-    padding: 2%;
-}
-
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-.container {
-    border-radius: 3%;
-    background-color: #f2f2f2;
-    padding: 3%;
-}
-
-input[type=text], select, textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 0.5%;
-    box-sizing: border-box;
-    margin-top: 1%;
-    margin-bottom: 3%;
-    resize: vertical;
-}
-
-footer {
-    /* white bg for page content */
-    background-color: #ffffff;
-    padding: 2%;
-}
-
-.border {
-    /* borders to separate page content */
-    border: 1px solid #c5cae9;
-    padding-bottom: 1%;
+    max-width:90%;
 }
 
 
-/* font sizes */
-h1 {
-    font-size: 350%;
+img{
+    width: 30%;
+    height: 60%;
 }
 
-h2 {
-    font-size: 200%;
-    background-color: #505b99;
-    color: #ffffff;
-    padding: 1%;
+img:hover{
+    opacity: .7;
+    cursor: pointer;
 }
 
-h3 {
-    font-size: 150%;
-    background-color: #505b99;
-    color: #ffffff;
-    padding: 1%;
-}
-
-h4 {
-    font-size: 110%;
-    background-color: #505b99;
-    color: #ffffff;
-    padding: 0.5%;
-}
-
-/* head stylings */
-#title {
-    color: #ffffff;
-    background-color: #1a237e;
-    padding: 1% 5%;
-}
-
-    #title p {
-        font-style: italic;
-    }
-
-nav {
-    background-color: #3f51b5;
-}
-
-    nav li {
-        display: inline;
-        padding-right: 2%;
-    }
-
-    nav a, footer a {
-        color: #ffffff;
-        font-size: 120%;
-    }
-
-        nav a:hover {
-            background-color: #F50057;
-            padding: 1%;
-            color: #ffffff;
-        }
-
-    nav ul {
-        padding: .5% 5%;
-    }
-
-
-/* figure styling */
-
-figure img {
+.Animals{
+    background-color: white;
     width: 100%;
 }
 
-
-/* slideShow 
-
-.SSFrame {
-
-    width: 100%;
-
-
-    overflow: hidden;
+h2{
+    font-size: 2vw;
+    border-bottom: .1vw solid;
+    
+}
+h2 span{
+    background-color: #4BD7D7;
+    border: .1vw solid black;
+    color: white;
+    padding: .5%;
 }
 
-.SSimgFrame {
-    height: 450px;
-    clear: both;
-    position: relative;
-
-    -webkit-transition: left 2s;
-    -moz-transition: left 2s;
-    -o-transition: left 2s;
-    transition: left 2s;
+h2 span:hover{
+    color: palevioletred;
+    cursor: pointer;
 }
-
-
-.SSbuttonFrame {
-    float: left;
-    margin: 0px;
-    padding: 0px;
-    position: relative;
-}
-
-#slider-image-1:target ~ .image-holder {
-    left: 0px;
-}
-
-#slider-image-2:target ~ .image-holder {
-    left: -800px;
-}
-
-#slider-image-3:target ~ .image-holder {
-    left: -1600px;
-}
-
-.button-holder {
-    position: relative;
-    top: -20px;
-}
-
-.slider-change {
-    display: inline-block;
-    height: 10px;
-    width: 10px;
-    border-radius: 5px;
-}
-
-*/
-
 
 /* stories */
 
@@ -202,42 +46,21 @@ figure img {
 }
 
 
-.highlights--media {
-    float: left;
+.highlights--media{
+    float:left;
 }
 
-    .highlights--media img {
-        width: 300px;
-        height: 300px;
-        margin-right: 15px;
-    }
-
-.highlights--button {
-    float: right;
+.highlights--media img{
+width:300px;height:300px;margin-right:15px;
 }
 
-/* gallary */
-
-div.gallery {
-    margin: 3px;
-    border: 1px solid #ccc;
-    float: left;
-    width: 180px;
-}
-
-    div.gallery:hover {
-        border: 1px solid #777;
-    }
-
-    div.gallery img {
-        width: 100%;
-        height: auto;
-        float: left;
-    }
-
-div.desc {
-    padding: 10px;
-    text-align: center;
+.highlights--button{
+    float:right;
 }
 
 
+
+p {
+    font-style: italic;
+    font-size:100%;
+}

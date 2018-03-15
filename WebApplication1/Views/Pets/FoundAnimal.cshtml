@@ -1,0 +1,96 @@
+﻿
+@{
+    ViewBag.Title = "FoundAnimal";
+}
+
+<header>
+    <h2>Found Animal Report</h2>
+    <p>To report  about founding pet. Please, provide the following informations</p>
+</header>
+
+<form action="#">
+
+    <fieldset>
+
+        <legend>Enter your Name</legend>
+        <label for="fName" style="width: 200px; float: left; margin: 0 20px 0 0;">
+            <span>First Name</span>
+            <input type="text" id="fName">
+        </label>
+
+        <label for="lName" style="width: 200px; float: left; margin: 0 20px 0 0;">
+            <span>Last Name</span>
+            <input type="text" id="lName">
+        </label>
+
+    </fieldset>
+
+
+    <fieldset>
+
+        <legend>Enter your phone number inforamtion</legend>
+        <label for="ACode" style="width: 200px; float: left; margin: 0 20px 0 0;">
+            <span>Area Code</span>
+            <input type="text" id="ACode">
+        </label>
+
+        <label for="phone" style="width: 200px; float: left; margin: 0 20px 0 0;">
+            <span>Phone</span>
+            <input type="text" id="phone">
+        </label>
+
+    </fieldset>
+
+
+
+    <div id="alliance">
+        <fieldset>
+
+            <legend>Select the pet type</legend>
+            <input type="radio" name="Alliance" value="Cat" id="Cat"><label for="Cat"> Cat</label>
+            <input type="radio" name="Alliance" value="Dog" id="Dog"><label for="Dog"> Dog</label>
+            <input type="radio" name="Alliance" value="other" id="other"> <label for="other">Other </label>
+            <!-- insert text box,Done!-->
+            <label for="lName">Last Name:</label>
+            <input type="text" name="lName" id="lName" placeholder="Enter the pet type..">
+
+        </fieldset>
+    </div>
+
+
+
+
+    <fieldset>
+        <legend>The location where find the pet</legend>
+
+        <div id="essay">
+            <label for="essaywrting"> Describe exactly where you find it</label><br>
+            <textarea id="essaywrting" rows="5" cols="50" name="essay">Start here...</textarea>
+        </div>
+        <br>
+
+        <label for="zipC">Zip Code where find the pet</label>
+        <input type="text" name="zipC" id="zipC">
+
+    </fieldset>
+
+
+    <fieldset>
+        <legend>When you find the pet</legend>
+
+        <label for="date" style="width: 200px; float: left; margin: 0 20px 0 0;">
+            <span>Date</span>
+            <input id="date" type="datetime-local" name="bdaytime">
+        </label>
+
+        <label for="time" style="width: 200px; float: left; margin: 0 20px 0 0;">
+            <span>time</span>
+            <input id="time" type="time" name="usr_time">
+        </label>
+
+    </fieldset>
+
+    <input type="submit">
+
+
+</form>
