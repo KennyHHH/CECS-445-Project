@@ -1,9 +1,9 @@
-img{
+.Animals img{
     width: 30%;
     height: 60%;
 }
 
-img:hover{
+.Animals img:hover{
     opacity: .7;
     cursor: pointer;
 }

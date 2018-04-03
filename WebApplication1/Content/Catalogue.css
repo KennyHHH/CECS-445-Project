@@ -8,7 +8,7 @@
 }
 
 .image-template{
-    max-width:100%;
+    width:100%;
     max-height:55%;
     margin-bottom: 1rem;
     border-radius: 0.3rem;
@@ -24,11 +24,14 @@
 }
 
 .button-template:hover{
-    cursor:pointer;
     background-color:#1f53dc;
-    color:white;
     font-size:20px;
     font-weight:bold;
+}
+
+.button-template a:hover{
+    cursor:pointer;
+    color:white;
 }
 
 .col-4-2 {

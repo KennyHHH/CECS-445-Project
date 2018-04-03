@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "Map";
+}
+
+<h2>Map</h2>
+
+<h3>Lost and Found pets</h3>
+<img src="http://maps.google.com/mapfiles/ms/icons/yellow-dot.png" />Lost
+<img src="http://maps.google.com/mapfiles/ms/icons/blue-dot.png" />Found
+<div id="map"></div>
+<script>
+      function initMap() {
+          var uluru = {lat: 33.788747, lng: -118.109108};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 12,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map,
+          icon: 'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png',
+          title: 'Kiro'
+        });
+        var uluru = { lat: 33.766880, lng: -118.189188 };
+        var marker = new google.maps.Marker({
+            position: uluru,
+            map: map,
+            icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
+            title: 'Joe'
+        });
+      }
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAxloJ8fwwm_NPNtF0UKrn0XBOECnhRXo&callback=initMap">
+</script>

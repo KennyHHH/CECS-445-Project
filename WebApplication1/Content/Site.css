@@ -58,3 +58,8 @@ footer a:hover {
 footer li {
     list-style-type: none;
 }
+
+#map {
+    height: 400px;
+    width: 100%;
+}
