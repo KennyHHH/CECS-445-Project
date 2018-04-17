@@ -46,10 +46,16 @@ namespace WebApplication1.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Pets pet)
+        public ActionResult Create(Pets pet, HttpPostedFileBase file)
         {
             if (ModelState.IsValid)
             {
+                if(file!= null)
+                {
+                    file.SaveAs(HttpContext.Server.MapPath("~/Images/") + file.FileName);
+
+                    pet.ImagePath = file.FileName;
+                }
                 db.Pet.Add(pet);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -57,6 +63,67 @@ namespace WebApplication1.Controllers
 
             //ViewBag.BreedID = new SelectList(db.Breed, "BreedID", "Name", pet.BreedID);
             return View(pet);
+        }
+        public ActionResult Edit(int? id)
+        {
+            if(id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Pets ePet = db.Pet.Find(id);
+            if(ePet == null)
+            {
+                return HttpNotFound();
+            }
+            return View(ePet);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(Pets pet)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(pet).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+         
+            return View(pet);
+        }
+
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Pets dPet = db.Pet.Find(id);
+            if(dPet == null)
+            {
+                return HttpNotFound();
+            }
+            return View(dPet);
+
+        }
+
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            Pets dPet= db.Pet.Find(id);
+            db.Pet.Remove(dPet);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
         }
     }
 }

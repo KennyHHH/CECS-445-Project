@@ -24,7 +24,7 @@
         <th>
             @Html.DisplayNameFor(model => model.PetDescription)
         </th>
-        <th></th>
+     
     </tr>
 
 @foreach (var item in Model) {
@@ -41,11 +41,11 @@
         <td>
             @Html.DisplayFor(modelItem => item.PetDescription)
         </td>
-        @*Below does not yet do anything, i will add them once format is deem acceptable.*@
+   
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.PetID }) |
-            @Html.ActionLink("Details", "Details", new { id = item.PetID }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.PetID })
+        
+            @Html.ActionLink("Details", "Details", new { id = item.PetsId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.PetsId })
         </td>
     </tr>
 }
