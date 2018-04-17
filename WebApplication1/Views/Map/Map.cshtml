@@ -6,30 +6,72 @@
 <h2>Map</h2>
 
 <h3>Lost and Found pets</h3>
-<img src="http://maps.google.com/mapfiles/ms/icons/yellow-dot.png" />Lost
-<img src="http://maps.google.com/mapfiles/ms/icons/blue-dot.png" />Found
+<div id="map_legend">
+    Click on any pet to see more details&nbsp;&nbsp;&nbsp;
+    <img src="http://maps.google.com/mapfiles/ms/icons/yellow-dot.png" />Lost
+    <img src="http://maps.google.com/mapfiles/ms/icons/blue-dot.png" />Found
+</div>
 <div id="map"></div>
 <script>
-      function initMap() {
-          var uluru = {lat: 33.788747, lng: -118.109108};
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 12,
-          center: uluru
+    var geocoder;
+    var map;
+    function initMap() {
+        geocoder = new google.maps.Geocoder();
+        var latlng = new google.maps.LatLng(33.788747, -118.109108);
+        var mapOptions = {
+            zoom: 11,
+            center: latlng
+        }
+        map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+        var founds = "@ViewData["found"]";
+        var found = founds.split("#");
+        var i;
+        for (i = 0; i < found.length; i++) {
+            codeAddress(found[i], 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png');
+        }
+
+        var losts = "@ViewData["lost"]";
+        var lost = losts.split("#");
+        var i;
+        for (i = 0; i < lost.length; i++) {
+            codeAddress(lost[i], 'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png');
+        }
+    }
+
+    function codeAddress(address, icon) {
+        geocoder.geocode({ 'address': address }, function (results, status) {
+            if (status == 'OK') {
+                map.setCenter(results[0].geometry.location);
+                var marker = new google.maps.Marker({
+                    map: map,
+                    position: results[0].geometry.location,
+                    icon: icon
+                });
+                var infowindow = new google.maps.InfoWindow();
+                google.maps.event.addListener(marker, 'mouseover', (function (marker) {
+                    return function () {
+                        var contentString = '<h3>Joe</h3>' +
+                        '<p>Description...</p>';
+                        infowindow.setContent(contentString);
+                        infowindow.open(map, marker);
+                    }
+                })(marker));
+                google.maps.event.addListener(marker, 'mouseout', (function (marker) {
+                    return function () {
+                        infowindow.close();
+                    }
+                })(marker));
+                google.maps.event.addListener(marker, 'click', (function (marker) {
+                    return function () {
+                        window.open("/Home/Catalogue", '_blank');
+                    }
+                })(marker));
+            } else {
+                alert('Geocode was not successful for the following reason: ' + status);
+            }
         });
-        var marker = new google.maps.Marker({
-          position: uluru,
-          map: map,
-          icon: 'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png',
-          title: 'Kiro'
-        });
-        var uluru = { lat: 33.766880, lng: -118.189188 };
-        var marker = new google.maps.Marker({
-            position: uluru,
-            map: map,
-            icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
-            title: 'Joe'
-        });
-      }
+    }
 </script>
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAxloJ8fwwm_NPNtF0UKrn0XBOECnhRXo&callback=initMap">

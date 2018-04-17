@@ -63,3 +63,7 @@ footer li {
     height: 400px;
     width: 100%;
 }
+
+#map_legend {
+    padding: 15px;
+}
