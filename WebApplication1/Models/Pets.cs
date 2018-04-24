@@ -35,5 +35,8 @@ namespace WebApplication1.Models
 
         //public virtual Breed Breed { get; set; }
 
+        public string Address { get; set; }
+
+        public bool Lost { get; set; }
     }
 }

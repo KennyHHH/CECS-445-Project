@@ -50,6 +50,7 @@ namespace WebApplication1.Controllers
         {
             if (ModelState.IsValid)
             {
+                pet.Lost = true;
                 if(file!= null)
                 {
                     file.SaveAs(HttpContext.Server.MapPath("~/Images/") + file.FileName);

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
 {
@@ -10,8 +11,20 @@ namespace WebApplication1.Controllers
     {
         public ActionResult Map()
         {
-            ViewData["found"] = "1801 Conquista Ave Long Beach, CA 90815" + "#" + "761 E 46th St, Long Beach, CA 90813";
-            ViewData["lost"] = "3101 Pacific Coast Hwy Signal Hill, CA 90755";
+            String found = "";
+            String lost = "";
+            PetEntities db = new PetEntities();
+            foreach (Pets pet in db.Pet)
+            {
+                if(pet.Lost)
+                    lost += pet.Address + "#";
+                else
+                    found += pet.Address + "#";
+            }
+            found = found.Remove(found.Length - 1);
+            lost = lost.Remove(lost.Length - 1);
+            ViewData["found"] = found;
+            ViewData["lost"] = lost;
             return View();
         }
 
