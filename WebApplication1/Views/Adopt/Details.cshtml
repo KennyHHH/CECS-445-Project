@@ -1,0 +1,37 @@
+﻿@model WebApplication1.Models.Adopt
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Adopt</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.APetName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.APetName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.APetDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.APetDescription)
+        </dd>
+
+    </dl>
+</div>
+
+<img src="~/Images/@Html.DisplayFor(model =>model.ImagePath)" alt="Image" />
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AdoptId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

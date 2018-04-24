@@ -42,6 +42,8 @@ namespace WebApplication1.Models
 
         [Display(Name = "Remember me?")]
         public bool RememberMe { get; set; }
+
+        public string ReturnUrl { get; set; }
     }
 
     public class RegisterModel

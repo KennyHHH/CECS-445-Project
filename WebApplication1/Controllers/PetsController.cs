@@ -9,6 +9,7 @@ using System.Data.Entity;
 
 namespace WebApplication1.Controllers
 {
+    [Authorize(Roles = "User")]
     public class PetsController : Controller
     {
         private PetEntities db = new PetEntities();

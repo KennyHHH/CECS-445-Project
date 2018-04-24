@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace WebApplication1.Models
 {
-    [Bind(Exclude = "PetsId")]
+
     public class Pets
     {
         

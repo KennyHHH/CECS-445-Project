@@ -79,7 +79,14 @@ namespace WebApplication1.Controllers
         public ActionResult LogIn(string returnUrl)
         {
             ViewBag.ReturnUrl = returnUrl;
-            return View();
+            if (!User.Identity.IsAuthenticated)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
         }
 
         //
@@ -102,6 +109,11 @@ namespace WebApplication1.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
+                    if (returnUrl == null)
+                    {
+                        return RedirectToAction("Index", "Home");
+                    }
+                    else
                     return Redirect(returnUrl);
                 case SignInStatus.RequiresVerification:
                     return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
