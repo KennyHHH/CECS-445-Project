@@ -16,13 +16,15 @@ namespace WebApplication1.Controllers
             PetEntities db = new PetEntities();
             foreach (Pets pet in db.Pet)
             {
-                if(pet.Lost)
+                if (pet.Lost)
                     lost += pet.Address + "#";
                 else
                     found += pet.Address + "#";
             }
-            found = found.Remove(found.Length - 1);
-            lost = lost.Remove(lost.Length - 1);
+            if (found.Length > 0)
+                found = found.Remove(found.Length - 1);
+            if (lost.Length > 0)
+                lost = lost.Remove(lost.Length - 1);
             ViewData["found"] = found;
             ViewData["lost"] = lost;
             return View();
