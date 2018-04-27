@@ -48,7 +48,7 @@ namespace WebApplication1.Models
 
     public class RegisterModel
     {
-        [Required]
+        //[Required]
         [Display(Name = "UserRoles")]
         public string UserRoles { get; set; }
 

@@ -79,14 +79,15 @@ namespace WebApplication1.Controllers
         public ActionResult LogIn(string returnUrl)
         {
             ViewBag.ReturnUrl = returnUrl;
-            if (!User.Identity.IsAuthenticated)
-            {
-                return View();
-            }
-            else
-            {
-                return RedirectToAction("Index", "Home");
-            }
+            return View();
+            //if (!User.Identity.IsAuthenticated)
+            //{
+            //    return View();
+            //}
+            //else
+            //{
+            //    return RedirectToAction("Index", "Home");
+            //}
         }
 
         //
@@ -127,12 +128,11 @@ namespace WebApplication1.Controllers
         //
         // GET: /Account/LogOff
 
-        //public ActionResult LogOff()
-        //{
-        //    FormsAuthentication.SignOut();
-
-        //    return RedirectToAction("Index", "Home");
-        //}
+        public ActionResult LogOff()
+        {
+            Request.GetOwinContext().Authentication.SignOut(Microsoft.AspNet.Identity.DefaultAuthenticationTypes.ApplicationCookie);
+            return RedirectToAction("Index", "Home");
+        }
 
         //
         // GET: /Account/Register
@@ -158,9 +158,10 @@ namespace WebApplication1.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {                    
-                    await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+                    
 
-                    await this.UserManager.AddToRoleAsync(user.Id, model.UserRoles);
+                    await this.UserManager.AddToRoleAsync(user.Id, "User");
+                    await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
 
                     return RedirectToAction("Index", "Home");
                 }

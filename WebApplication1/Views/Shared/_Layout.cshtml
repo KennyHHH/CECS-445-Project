@@ -38,10 +38,20 @@
                 <li class="nav-item">@Html.ActionLink("Lost animal", "Index", "Pets", new { area = "" }, new { @class = "nav-link" })</li>
                 <li class="nav-item">@Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
             </ul>
+            @if (User.Identity.IsAuthenticated)
+            {
             <form class="form-inline mt-2 mt-md-0">
-                <input type="button" class="btn my-2 my-sm-0 text-black nav-item bg-white" value="Log in" onclick = "location.href = '@Url.Action("LogIn", "Account")'"/>
-                
+
+                <input type="button" class="btn my-2 my-sm-0 text-black nav-item bg-white" value="Log Off" onclick="location.href = '@Url.Action("LogOff", "Account")'" />
             </form>
+            }
+            else 
+            { 
+            <form class="form-inline mt-2 mt-md-0">
+                <input type="button" class="btn my-2 my-sm-0 text-black nav-item bg-white" value="Log in" onclick="location.href = '@Url.Action("LogIn", "Account")'" />
+            </form>
+            }
+            
         </div>
     </nav>
     <div class="container body-content">
@@ -91,7 +101,7 @@
                 </div>
                 <div class="col-md-3">
                     <br />
-                    <ul>
+                    <ul>             
                         <li class="font-weight-bold">@Html.ActionLink("Sign In", "LogIn", "Account")</li>
                         <li class="font-weight-bold"><a href="#!">Sign On</a></li>
                     </ul>
