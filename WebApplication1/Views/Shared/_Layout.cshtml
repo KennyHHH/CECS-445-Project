@@ -36,6 +36,7 @@
                 <li class="nav-item">@Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
                 <li class="nav-item">@Html.ActionLink("Adopt", "Catalogue", "Adopt", new { area = "" }, new { @class = "nav-link" })</li>
                 <li class="nav-item">@Html.ActionLink("Lost animal", "Index", "Pets", new { area = "" }, new { @class = "nav-link" })</li>
+                <li class="nav-item">@Html.ActionLink("Adopt Management", "Index", "Adopt", new { area = "" }, new { @class = "nav-link" })</li>
                 <li class="nav-item">@Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
             </ul>
             @if (User.Identity.IsAuthenticated)
@@ -92,7 +93,7 @@
                                     <ul class="px-2">
                                         <li>@Html.ActionLink("Found", "FoundAnimal", "Pets")</li>
                                         <li>@Html.ActionLink("Lost", "Index", "Pets")</li>
-                                        <li>@Html.ActionLink("Management","Index", "Adopt")</li>
+                                        <li>@Html.ActionLink("Adoption Request Management","Index", "AdoptForm")</li>
                                     </ul>
                                 </li>
                             </ul>

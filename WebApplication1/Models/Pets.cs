@@ -16,11 +16,13 @@ namespace WebApplication1.Models
         public int PetsId { get; set; }
 
     
+        [DisplayName("Pet's Name")]
         [Required(ErrorMessage = "A pet name is required.")]
         [StringLength(160)]
         public string PetName { get; set; }
 
-        
+
+        [DisplayName("Pet's Age")]
         [Required(ErrorMessage = "A pet age is required.")]
         [Range(1, 20,
             ErrorMessage = "Age must be between 1 and 20")]

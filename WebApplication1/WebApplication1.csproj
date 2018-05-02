@@ -187,6 +187,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdoptController.cs" />
+    <Compile Include="Controllers\AdoptFormController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MapController.cs" />
     <Compile Include="Controllers\PetsController.cs" />
@@ -195,6 +196,7 @@
     </Compile>
     <Compile Include="Models\AccountModel.cs" />
     <Compile Include="Models\Adopt.cs" />
+    <Compile Include="Models\AdoptFrom.cs" />
     <Compile Include="Models\Breed.cs" />
     <Compile Include="Models\Example.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -313,6 +315,10 @@
     <Content Include="Views\Adopt\Details.cshtml" />
     <Content Include="Views\Adopt\Catalogue.cshtml" />
     <Content Include="Views\Adopt\Edit.cshtml" />
+    <Content Include="Views\AdoptForm\Index.cshtml" />
+    <Content Include="Views\AdoptForm\Delete.cshtml" />
+    <Content Include="Views\AdoptForm\FormSubmit.cshtml" />
+    <Content Include="Views\AdoptForm\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

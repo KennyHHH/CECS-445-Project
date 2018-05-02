@@ -10,6 +10,7 @@ namespace WebApplication1.Models
     {
         public DbSet<Pets> Pet { get; set; }
         public DbSet<Adopt> Adopt { get; set; }
+        public DbSet<AdoptForm> AdoptForm { get; set; }
         //public DbSet<Breed> Breed { get; set; }
     }
 }
