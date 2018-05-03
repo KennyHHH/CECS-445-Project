@@ -16,7 +16,8 @@
                 <h3><b> @Html.DisplayFor(modelItem => item.APetName)</b></h3>
             </div>
             <img src="~/Images/@Html.DisplayFor(modelItem =>item.ImagePath)" alt="" class="image-template"/>
-            <button class="button-template">@Html.ActionLink("Adopt", "FormSubmit", "AdoptForm", new { petname = item.APetName }, null)</button>
+            @*<button class="button-template">@Html.ActionLink("Adopt", "FormSubmit", "AdoptForm", new { petname = item.APetName }, null)</button>*@
+            <button class="button-template">@Html.ActionLink("See more", "AnimalInfo", "Adopt", new { aid = @item.AdoptId }, null)</button>
         </div>
     }
     @*

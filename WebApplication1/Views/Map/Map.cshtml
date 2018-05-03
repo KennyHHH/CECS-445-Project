@@ -15,6 +15,10 @@
 <script>
     var geocoder;
     var map;
+    var lostNames = "@ViewData["lostNames"]";
+    var lostName = lostNames.split("#");
+    var foundNames = "@ViewData["foundNames"]";
+    var foundName = foundNames.split("#");
     function initMap() {
         geocoder = new google.maps.Geocoder();
         var latlng = new google.maps.LatLng(33.788747, -118.109108);
@@ -28,18 +32,18 @@
         var found = founds.split("#");
         var i;
         for (i = 0; i < found.length; i++) {
-            codeAddress(found[i], 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png');
+            codeAddress(found[i], 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png', foundName[i]);
         }
 
         var losts = "@ViewData["lost"]";
         var lost = losts.split("#");
         var i;
         for (i = 0; i < lost.length; i++) {
-            codeAddress(lost[i], 'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png');
+            codeAddress(lost[i], 'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png', lostName[i]);
         }
     }
 
-    function codeAddress(address, icon) {
+    function codeAddress(address, icon, name) {
         geocoder.geocode({ 'address': address }, function (results, status) {
             if (status == 'OK') {
                 map.setCenter(results[0].geometry.location);
@@ -51,8 +55,7 @@
                 var infowindow = new google.maps.InfoWindow();
                 google.maps.event.addListener(marker, 'mouseover', (function (marker) {
                     return function () {
-                        var contentString = '<h3>Joe</h3>' +
-                        '<p>Description...</p>';
+                        var contentString = '<h3>' + name + '</h3>';
                         infowindow.setContent(contentString);
                         infowindow.open(map, marker);
                     }
@@ -64,7 +67,7 @@
                 })(marker));
                 google.maps.event.addListener(marker, 'click', (function (marker) {
                     return function () {
-                        window.open("/Home/Catalogue", '_blank');
+                        window.open("/Adopt/Catalogue", '_blank');
                     }
                 })(marker));
             } else {

@@ -319,6 +319,7 @@
     <Content Include="Views\AdoptForm\Delete.cshtml" />
     <Content Include="Views\AdoptForm\FormSubmit.cshtml" />
     <Content Include="Views\AdoptForm\Details.cshtml" />
+    <Content Include="Views\Adopt\AnimalInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

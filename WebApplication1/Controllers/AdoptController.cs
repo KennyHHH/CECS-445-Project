@@ -129,5 +129,19 @@ namespace WebApplication1.Controllers
             }
             base.Dispose(disposing);
         }
+
+        public ActionResult AnimalInfo(int? aid)
+        {
+            if (aid == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Adopt adopt = db.Adopt.Find(aid);
+            if (adopt == null)
+            {
+                return HttpNotFound();
+            }
+            return View(adopt);
+        }
     }
 }
