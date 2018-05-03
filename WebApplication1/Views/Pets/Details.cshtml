@@ -6,7 +6,43 @@
 
 <h2>Details</h2>
 
-<div>
+<div class="jumbotron">
+    <div class="row">
+        <div class="col-5">
+            <img src="~/Images/@Model.ImagePath" style="width:100%; height:100%; border-radius: 0.3rem;">
+        </div>
+        <div class="col-6">
+            <div style="margin-bottom:10px; margin-top:20px; background-color:#CCCCCC; border-radius:0.3rem;">
+                <img src="~/iconname.ico" style="height:30px;width:30px; margin-right:10px; padding:5px;" />
+                <label>Name: @Model.PetName </label>
+                <div id="333"></div>
+            </div>
+
+            <div style="margin-bottom:10px; background-color:#CCCCCC; border-radius:0.3rem;">
+                <img src="~/animalicon.png" style="height:30px;width:30px; margin-right:10px;" />
+                <label>Type: </label>
+            </div>
+
+            <div style="margin-bottom:10px; background-color:#CCCCCC; border-radius:0.3rem;">
+                <img src="~/ageicon.png" style="height:30px;width:30px; margin-right:10px; padding:5px;" />
+                <label>Age: @Model.PetAge</label>
+            </div>
+
+            <div style=" background-color:#CCCCCC; border-radius:0.3rem;">
+                <img src="~/descriptionicon.png" style="height:30px;width:30px; margin-right:10px; padding:5px;" />
+                <label>Description: @Model.PetDescription </label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <button class="button-templated" style="margin-top:5%;">@Html.ActionLink("Edit", "Edit", new { id = Model.PetsId })</button>
+            <button class="button-templated" style="margin-top:5%;">@Html.ActionLink("Back to List", "Index")</button>
+        </div>
+    </div>
+</div>
+
+@*<div>
     <h4>Pets</h4>
     <hr />
     <dl class="dl-horizontal">
@@ -41,4 +77,4 @@
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.PetsId }) |
     @Html.ActionLink("Back to List", "Index")
-</p>
+</p>*@

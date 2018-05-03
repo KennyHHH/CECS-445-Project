@@ -4,51 +4,73 @@
     ViewBag.Title = "Lost Pets";
 }
 
-<h2>Temporary Index of Lost Pets</h2>
 
-<p>
-    @Html.ActionLink("Add New Lost Pet", "Create")
-</p>
-<table class="table">
-    <tr>
-        @*
-        <th>
-            @Html.DisplayNameFor(model => model.Breed.Name)
-        </th>*@
-        <th>
-            @Html.DisplayNameFor(model => model.PetName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PetAge)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PetDescription)
-        </th>
-     
-    </tr>
+<h2>Catalogue</h2>
 
-@foreach (var item in Model) {
-    <tr>
-        @*<td>
-            @Html.DisplayFor(modelItem => item.Breed.Name)
-        </td>*@
-        <td>
-            @Html.DisplayFor(modelItem => item.PetName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PetAge)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PetDescription)
-        </td>
-   
-        <td>
-        
-            @Html.ActionLink("Details", "Details", new { id = item.PetsId }) |
-            @Html.ActionLink("Edit","Edit", new { id = item.PetsId})|
-            @Html.ActionLink("Delete", "Delete", new { id = item.PetsId })
-        </td>
-    </tr>
-}
 
-</table>
+
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-4-2 jumb">
+                <div class="template-text">
+                    <h3><b> @Html.DisplayFor(modelItem => item.PetName)</b></h3>
+                </div>
+                <img src="~/Images/@Html.DisplayFor(modelItem =>item.ImagePath)" alt="" class="image-template" />
+                @*<button class="button-template">@Html.ActionLink("Adopt", "FormSubmit", "AdoptForm", new { petname = item.APetName }, null)</button>*@
+                <div class="row">
+                    <button class="button-template col-3" style="margin-left:5%;">@Html.ActionLink("Details", "Details", new { id = item.PetsId })</button>
+                    <button class="button-template col-3" style="margin-left:5%;">@Html.ActionLink("Delete", "Delete", new { id = item.PetsId }) </button >
+                    <button class="button-template col-3" style="margin-left:5%;">@Html.ActionLink("Edit", "Edit", new { id = item.PetsId })</button> 
+
+                </div >
+            </div >
+        }
+    </div>
+    <p>
+        @Html.ActionLink("Add New Lost Pet", "Create")
+    </p>
+    @*<table class="table">
+        <tr>
+            @*
+                <th>
+                    @Html.DisplayNameFor(model => model.Breed.Name)
+                </th>@
+            <th>
+                @Html.DisplayNameFor(model => model.PetName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PetAge)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PetDescription)
+            </th>
+
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.Breed.Name)
+                    </td>@
+                <td>
+                    @Html.DisplayFor(modelItem => item.PetName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PetAge)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PetDescription)
+                </td>
+
+                <td>
+
+                    @Html.ActionLink("Details", "Details", new { id = item.PetsId }) |
+                    @Html.ActionLink("Edit", "Edit", new { id = item.PetsId })|
+                    @Html.ActionLink("Delete", "Delete", new { id = item.PetsId })
+                </td>
+            </tr>
+        }
+
+    </table>*@
