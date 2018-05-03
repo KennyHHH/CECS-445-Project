@@ -13,7 +13,7 @@ namespace WebApplication1.Controllers
     {
         private PetEntities db = new PetEntities();
 
-
+        [Authorize(Roles = "User")]
         public ActionResult Index()
         {
             var pets = db.Adopt;
@@ -24,7 +24,7 @@ namespace WebApplication1.Controllers
         {
             var adp = db.Adopt;
             return View(adp)
-;        }
+;       }
     
 
         public ActionResult Details(int? id)

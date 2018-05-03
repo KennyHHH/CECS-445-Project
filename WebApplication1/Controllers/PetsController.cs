@@ -9,7 +9,7 @@ using System.Data.Entity;
 
 namespace WebApplication1.Controllers
 {
-    [Authorize(Roles = "User")]
+
     public class PetsController : Controller
     {
         private PetEntities db = new PetEntities();
@@ -39,6 +39,7 @@ namespace WebApplication1.Controllers
             return View(pet);
         }
 
+        [Authorize(Roles = "User")]
         public ActionResult Create()
         {
             //ViewBag.BreedID = new SelectList(db.Breed, "BreedID", "Name");
@@ -66,6 +67,8 @@ namespace WebApplication1.Controllers
             //ViewBag.BreedID = new SelectList(db.Breed, "BreedID", "Name", pet.BreedID);
             return View(pet);
         }
+
+        [Authorize(Roles = "User")]
         public ActionResult Edit(int? id)
         {
             if(id == null)
@@ -94,6 +97,7 @@ namespace WebApplication1.Controllers
             return View(pet);
         }
 
+        [Authorize(Roles = "User")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
